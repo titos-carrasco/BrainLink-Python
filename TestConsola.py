@@ -27,7 +27,7 @@ def main():
                     bld.lowGamma,
                     bld.midGamma
             )
-            time.sleep( 0.02 )
+            time.sleep( 0 )
             #time.sleep( 20 )
         bl.disconnect()
 

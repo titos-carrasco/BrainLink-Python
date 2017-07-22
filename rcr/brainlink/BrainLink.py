@@ -55,9 +55,8 @@ class BrainLink():
         # conecta a la puerta
         print( "MindSet Connect(): Intentando conectar a", self.port, " ...", end='' )
         try:
-            self.conn = serial.Serial( self.port, baudrate=9600, bytesize=8,
+            self.conn = serial.Serial( self.port, baudrate=57600, bytesize=8,
                                        parity='N', stopbits=1, timeout=0.1 )
-            time.sleep( 1 )
             self.conn.flushInput()
             self.conn.flushOutput()
             self.connected = True
@@ -72,7 +71,7 @@ class BrainLink():
         self.tParser = threading.Thread( target=self._TParser, args=(), name="_TParser" )
         self.tParser.start()
         while ( not self.tRunning ):
-            time.sleep( 0.0001 )
+            time.sleep( 0 )
         print( "OK" )
 
         return True
@@ -140,15 +139,15 @@ class BrainLink():
                     else:
                         self.queue = self.queue + data
                     self.bytesLeidos = self.bytesLeidos + len( data )
+                    if( len( self.queue ) > 512 ):
+                        print( "Advertencia, bytes pendientes", len( self.queue ) )
             except Exception as e:
                 print( e )
 
             # debe haber leido algo
             if( len( self.queue ) == 0 ):
-                time.sleep( 0.0 )
+                time.sleep( 0 )
                 continue
-            if( len( self.queue ) > 256 ):
-                print( time.time(), len( self.queue ) )
 
             # trabajamos con un automata
             b = self.queue.pop( 0 )
