@@ -23,7 +23,10 @@ long_line_behaviour=1
 long_line_column=78
 
 [files]
-current_page=-1
+current_page=2
+FILE_NAME_0=549;Python;0;EUTF-8;0;1;0;%2Fhome%2Froberto%2FProjects%2FGitHub%2FBrainLink-Python%2Frcr%2Fbrainlink%2FBrainLink.py;0;4
+FILE_NAME_1=825;Python;0;EUTF-8;0;1;0;%2Fhome%2Froberto%2FProjects%2FGitHub%2FBrainLink-Python%2FTestConsola.py;0;4
+FILE_NAME_2=103;Python;0;EUTF-8;0;1;0;%2Fhome%2Froberto%2FProjects%2FGitHub%2FBrainLink-Python%2FTestGraphics.py;0;4
 
 [build-menu]
 EX_00_LB=_Execute
